@@ -1,21 +1,37 @@
 body {
-    background-color: aquamarine;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-body {
-    background-color: aquamarine;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('foto.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  z-index: -1; /* biar di belakang isi web */
+}
+
 
 .kartu-profil {
     text-align: center;
     width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: white;
+    background:   radial-gradient(at top left, rgb(25, 0, 255), transparent),
+  radial-gradient(at bottom right, rgb(255, 0, 0), transparent),
+  linear-gradient(135deg, rgb(215, 11, 215), black);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    color: white;
 }
 
 .profile-photo {
@@ -24,4 +40,44 @@ body {
   height: 50%;
   object-fit: cover;
     border-radius: 50%;
+    color: aliceblue;
+}
+
+.button {
+    color: rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    background: linear-gradient(to right, rgb(3, 198, 224),rgb(23, 85, 208));
+}
+
+
+input, select, button, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+input, select, textarea {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #ff69b4, 0 0 20px #00ced1;
+}
+
+button {
+  background: linear-gradient(90deg, #ff1493, #ff4500, #00ffff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 0 15px #ff1493, 0 0 30px #00ffff;
+  transform: scale(1.05);
 }
